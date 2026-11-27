@@ -100,14 +100,15 @@
       you visit. It works <em>on your device</em>: there is no account, no ads, no analytics and no crash reporting,
       and we do not run servers that receive your data. Your browsing data and download history stay on your phone
       and are not included in Android backups. The websites you open receive your requests directly, just as in any
-      other browser, and handle your data under their own policies.
+      other browser, and handle your data under their own policies; text you type that is not a web address is sent
+      to Google Search (see Section 4).
     </div>
 
     <h2>1. Who we are</h2>
     <p>
       This Privacy Policy explains how the Web Video Downloader Android app (“Web Video Downloader”, “the app”,
       “we”, “us”) handles information. It applies to the app distributed on Google Play under the package name
-      <code>com.webvideodownloader.app</code>. By using the app you agree to this Policy.
+      <code>com.webvideodownloader.app</code>.
     </p>
 
     <h2>2. What the app does on your device</h2>
@@ -119,21 +120,26 @@
       <li><strong>No account required.</strong> You never sign in to the app or give us your name, email address or
         phone number.</li>
       <li><strong>Download history stays on the device.</strong> For each download the app keeps the address of the
-        video and of the page it came from, its title, the file name and the progress, so that you can pause, resume,
-        open or share it. This list is stored only in the app’s private storage.</li>
+        video and of the page it came from, its title and thumbnail address, the request details needed to resume it
+        (the page address sent as Referer and the browser’s user agent), the file name, the progress and the times it
+        was added and finished, so that you can pause, resume, open or share it. This list is stored only in the
+        app’s private storage.</li>
       <li><strong>Saved videos.</strong> Finished videos are saved to the public
         <code>Download/Web Video Downloader</code> folder on your device, where other apps such as your gallery or
-        file manager can open them. Unfinished downloads are kept as temporary files in the app’s private storage.</li>
+        file manager can open them. Unfinished downloads are kept as temporary files in the app-specific storage
+        area; on Android 9 and older, apps holding the storage permission can read that area.</li>
       <li><strong>Browser data.</strong> Cookies, cache and website storage created by the pages you visit are kept on
-        your device by the Android System WebView component, as in other Android browsers.</li>
+        your device by the Android System WebView component, as in other Android browsers. Video thumbnails shown in
+        the app are cached on your device.</li>
       <li><strong>Not backed up.</strong> The app opts out of Android cloud backup and device-to-device transfer, so
-        its download history and browser data are not copied to your Google account or to a new phone.</li>
+        Android does not copy its download history or browser data to your Google account or to a new phone.</li>
     </ul>
 
     <h2>3. Permissions</h2>
     <div class="table-wrap">
       <table>
-        <tr><th>Permission</th><th>Why it is used</th></tr>
+        <caption class="muted" style="text-align:left;caption-side:top;padding-bottom:6px">Permissions requested by the app</caption>
+        <tr><th scope="col">Permission</th><th scope="col">Why it is used</th></tr>
         <tr>
           <td>Internet and network state<br><span class="muted perm">(INTERNET, ACCESS_NETWORK_STATE)</span></td>
           <td>To load the web pages you open and to download the videos you choose from the websites that host them.</td>
@@ -155,21 +161,38 @@
         </tr>
       </table>
     </div>
-    <p class="muted">The app does not request access to your contacts, photos, camera, microphone, location, phone,
-      call logs, SMS or accounts.</p>
+    <p class="muted">Apart from the storage permission on Android 9 and older, which Android presents as access to
+      photos, media and files, the app does not request access to your contacts, photos, camera, microphone,
+      location, phone, call logs, SMS or accounts.</p>
 
     <h2>4. Websites you visit and the built-in browser</h2>
     <p>
-      When you open a page or download a video, your device connects <em>directly</em> to the website concerned. Like
-      any browser, the app sends that website the information needed to deliver its content, such as your IP address,
-      the browser’s user agent (device and Android version), the address of the page and the cookies that website has
-      set. Downloads carry the address of the page you were on and that same website’s cookies, so that they work in
-      the same way as playing the video; cookies of one website are never sent to a different website. None of this
-      passes through us.
+      When you open a page, your device connects <em>directly</em> to the website concerned. Like any browser, the app
+      sends that website the information needed to deliver its content, such as your IP address, the browser’s user
+      agent (device and Android version), the address of the page and the cookies that website has set. To let
+      embedded content such as video players and sign-in widgets work, the browser accepts third-party cookies, which
+      can allow embedded services to recognise you across websites, as in other browsers that allow them.
+    </p>
+    <h3>Requests the app makes itself</h3>
+    <p>
+      To find the videos on a page, the app sends a few requests of its own, from your device, to the addresses of the
+      videos and video playlists that the page loads, even before you choose to download anything: it reads their type
+      and size and, for streaming video, fetches the playlist that lists the available qualities and parts. Downloads
+      are made the same way. These requests include the full address of the page you are on (as the
+      <code>Referer</code> header) and the browser’s user agent, and, only when the video is hosted by the same website
+      as the page, that website’s cookies; cookies of one website are never sent to a different website. The app also
+      loads the video thumbnail images the page points to, and caches them on your device. None of these requests
+      pass through us.
+    </p>
+    <h3>Search</h3>
+    <p>
+      When you type text into the address bar or the start page that is not a web address, the app opens a
+      <strong>Google Search</strong> results page for it, so your search terms are sent to Google and handled under the
+      <a href="https://policies.google.com/privacy" rel="noopener">Google Privacy Policy</a>.
     </p>
     <p>
       Each website decides what it collects and how it uses it, under its own privacy policy. We do not control third
-      party websites and are not responsible for their practices. The app does not support downloading from YouTube.
+      party websites and are not responsible for their practices.
     </p>
     <h3>Android System WebView</h3>
     <p>
@@ -188,7 +211,8 @@
     </p>
     <p>
       If you contact us by email, we will receive your email address and the content of your message. We use it only
-      to respond to you and keep it only as long as needed for that purpose.
+      to respond to you and keep it only as long as needed for that purpose. Our mailbox is provided by Google
+      (Gmail), so your message may be stored and processed on Google’s servers outside your country.
     </p>
 
     <h2>6. Your choices</h2>
@@ -203,7 +227,10 @@
 
     <h2>7. Users in the EEA, UK and Switzerland</h2>
     <p>
-      We do not process your personal data on our own systems, except emails you send us. Depending on where you live,
+      We do not process your personal data on our own systems, except emails you send us. We process those on the
+      basis of our legitimate interest in answering your request (Article 6(1)(f) GDPR). Because our mailbox is hosted
+      by Google, your message may be transferred outside the EEA, UK or Switzerland; Google describes the safeguards it
+      uses for such transfers in its privacy policy. Depending on where you live,
       you may have the right to access, correct or delete personal data we hold about you, to object to or restrict
       its processing, to data portability, and to lodge a complaint with your local data protection authority. To
       exercise these rights regarding your emails to us, contact us using the address below. Requests about data held
